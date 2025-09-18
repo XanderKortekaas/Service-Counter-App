@@ -3,26 +3,33 @@ import './App.css';
 
 import { useState } from 'react';
 
-function MyButton()
+function Counter()
 {
- 
-    
-  
   const [count, setCount] = useState(0);
 
-  function handleClick()
+  function handleIncrament()
   {
     setCount(count + 1);
   }
 
+  function handleDecrament()
+  {
+    if(count > 0)
+    {
+        setCount(count - 1);
+    }
+  }
+
   return(
-    <button className="button" onClick={handleClick}>
-    You pressed me {count} times
-    </button>
+  <div className='counter-container, counter-viewer'>
+    <button className='button' onClick={handleDecrament}>Decrease -</button>
+
+    <h1 className='counter-viewer'>huidige teller {count}</h1>
+
+    <button className='button' onClick={handleIncrament}>Increase +</button>
+  </div>   
   )
 }
-
-
 
 function App() {
   return (
@@ -36,8 +43,18 @@ function App() {
         <h1>
           Welcome to the Button
         </h1>
-        <MyButton />
 
+        <div className='counter-section'>
+          <h1>Counter 1</h1>
+          <Counter/>  
+        </div>
+
+        <hr/>
+
+        <div className='counter-section'>
+          <h1>Counter 2</h1>
+          <Counter/>  
+        </div>
         <a
           className="App-link"
           href="https://reactjs.org"
