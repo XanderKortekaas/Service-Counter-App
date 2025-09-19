@@ -1,4 +1,6 @@
-import logo from './logo.svg';
+import minus from './minus.png';
+import plus from './plus.png';
+import trashCan from './trash-can.png';
 import './App.css';
 
 import { useState } from 'react';
@@ -20,13 +22,20 @@ function Counter()
     }
   }
 
+  function resetCount()
+  {
+    setCount(0)
+  }
+
   return(
-  <div className='counter-container, counter-viewer'>
-    <button className='button' onClick={handleDecrament}>Decrease -</button>
-
-    <h1 className='counter-viewer'>huidige teller {count}</h1>
-
-    <button className='button' onClick={handleIncrament}>Increase +</button>
+  <div className='counter-container'>
+    <h2 className='counter-viewer'>Huidige Klant Aantal {count}</h2>
+    <br></br>
+    <button className='button, button-svg' onClick={handleDecrament}> <img src={minus} className='logo'/> </button>
+    <br></br>
+    <button className='button, button-svg' onClick={handleIncrament}> <img src={plus} className = 'logo'/> </button>
+    <br></br>
+    <button className='button, button-svg' onClick={resetCount}> <img src={trashCan} className='logo'/></button>
   </div>   
   )
 }
@@ -35,34 +44,28 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-
         <h1>
-          Welcome to the Button
+          Welcome to the Reception
         </h1>
 
         <div className='counter-section'>
-          <h1>Counter 1</h1>
+          <h1>HR</h1>
           <Counter/>  
         </div>
 
         <hr/>
 
         <div className='counter-section'>
-          <h1>Counter 2</h1>
+          <h1>Financials</h1>
           <Counter/>  
         </div>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
+        <hr/>
+
+        <div className='counter-section'>
+          <h1>ICT</h1>
+          <Counter/>
+        </div>
       </header>
     </div>
   );

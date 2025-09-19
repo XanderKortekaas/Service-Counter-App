@@ -27,51 +27,44 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: var(--c-gray-800);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: right;
   font-size: calc(10px + 2vmin);
-  color: var(--c-text-secondary);
-}
-
-.App-link {
-  color: var(--c-blue-700)
+  color: var(--c-green-200);
+  background-color: var(--c-gray-800);
 }
 
 .button{
-  background-color: var(--c-green-500);
-  color: var(--c-gray-900);
-  border-color: var(--c-green-200);
+  width: 100px;
+  height: 100px;
+  background-color: var(--c-blue-700);
+}
+
+.button-svg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 300px;
+  height: 100px;
 }
 
 .counter-container{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 20px;  
-  color: var(--c-olive-500);
-}
+  gap: 20px;
+  }
 
 .counter-viewer{
   margin-top: 40px;
   margin-bottom: 40px;
-  font-size: 20px;
-  color: var(--c-blue-700);
+  font-size: 48px;
+  color: var(--c-olive-500);
 }
 
 .counter-section{
@@ -83,11 +76,7 @@
   font-size: 48px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logo{
+  height: 100px;
+  width: 100px;
 }
